@@ -13,17 +13,13 @@ const LandingPageForProjects = ({ projects }: InferGetServerSidePropsType<typeof
             <button className="button" onClick={() => router.push('/')}>go back</button>
         </>
         )
-
-        // <Link href="/lamborghinian">lamborghinian</Link>
-        // <Link href="/eventeller">eventeller</Link>
-        // <Link href="/kartrade">kartrade</Link>
 }
 
 export default LandingPageForProjects
 
 export async function getServerSideProps() {
     const res = await fetch(`http://localhost:3000/api/projects`);
-    const projects: ProjectData = await res.json();
+    const projects: ProjectData[] = await res.json();
 
     return { props: { projects } };
 }

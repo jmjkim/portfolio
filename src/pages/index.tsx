@@ -7,12 +7,12 @@ import InfoDisplayer from '../components/landing_page/InfoDisplayer';
 import MarqueeDisplayer from '../components/landing_page/MarqueeDisplayer';
 
 export default function Home() {
-  const app = useRef();
+  const app = useRef()
 
   useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       let textWrapper = document.querySelector(".title");
-      textWrapper.innerHTML = textWrapper.textContent.replace(
+      textWrapper!.innerHTML = textWrapper!.textContent!.replace(
           /\S/g,
           "<span class='letter'>$&</span>"
       );
@@ -49,46 +49,43 @@ export default function Home() {
 
       gsap.from(
         ".navbar > div",
-        1.5,
         {
+          duration: 1.5,
           opacity: 0,
           y: -100,
           ease: Expo.easeInOut,
           delay: 3,
         },
-        0.08
       );
 
       gsap.from(
         ".site-menu > div", 
-        1,
         {
+          duration: 1,
           opacity: 0,
           y: -100,
           ease: Expo.easeInOut,
           delay: 2.5,
         },
-        0.2
       );
 
       gsap.from(
         ".info, .marquee", 
-        1, 
         {
+          duration: 1, 
           opacity: 0,
           y: 100,
           ease: Power2.easeInOut,
           delay: 3.5,
         },
-        0.1
       );
-    }, app);
+    }, app.current);
     
     return () => ctx.revert();
   }, []);
 
   return (
-    <div ref={app} className='main-container'>
+    <div ref={app.current} className='main-container'>
       <Navbar />
       <p className="title">meow meow meow</p>
       <CenterFloatingImageDisplayer />
