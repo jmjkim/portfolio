@@ -1,9 +1,10 @@
 import { ProjectData } from '../api/projects';
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { InferGetServerSidePropsType } from 'next';
-import { useRouter } from 'next/router';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+import BackToMainBtn from '@/components/BackToMainBtn';
 
 
 const LandingPageForProjects = ({ projects }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
@@ -13,18 +14,19 @@ const LandingPageForProjects = ({ projects }: InferGetServerSidePropsType<typeof
         router.push(`/projects/${title}`)
     }
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.fromTo(
                 ".project-container",
-                { 
-                    scale: 2,
+                {
+                    scale: 4,
                 },
 
                 { 
                     scale: 1, 
                     opacity: "100%",
-                    duration: 2,
+                    ease: "power2.inOut",
+                    duration: 2.5,
                 },
             );
         });
@@ -52,7 +54,7 @@ const LandingPageForProjects = ({ projects }: InferGetServerSidePropsType<typeof
                     )}
                 )}
             </div>
-            <div className="back-to-main-btn" onClick={() => router.push('/')}>Back to Main</div>
+            <BackToMainBtn />
         </>
     )
 }
