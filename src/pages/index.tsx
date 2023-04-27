@@ -1,6 +1,6 @@
 import { gsap, Expo, Power2 } from "gsap";
 import anime from 'animejs';
-import { useRef, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect, useEffect } from 'react';
 import Navbar from '../components/Navbar'
 import CenterFloatingImageDisplayer from '../components/landing_page/CenterFloatingImageDisplayer';
 import InfoDisplayer from '../components/landing_page/InfoDisplayer';
@@ -9,9 +9,9 @@ import MarqueeDisplayer from '../components/landing_page/MarqueeDisplayer';
 export default function Home() {
   const app = useRef()
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const ctx = gsap.context(() => {
-      let textWrapper = document.querySelector(".title");
+      const textWrapper = document.querySelector(".title");
       textWrapper!.innerHTML = textWrapper!.textContent!.replace(
           /\S/g,
           "<span class='letter'>$&</span>"
@@ -57,7 +57,7 @@ export default function Home() {
           delay: 3,
         },
       );
-
+      
       gsap.from(
         ".site-menu > div", 
         {
