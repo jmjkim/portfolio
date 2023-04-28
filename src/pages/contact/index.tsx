@@ -9,11 +9,13 @@ const ContactLandingPage = () => {
 	useEffect(() => {
 		const ctx = gsap.context(() => {
 			gsap.from(".tally-form-wrapper", {
-				duration: 2,
+				delay: .5,
+				duration: .5,
 				ease: "power1.out",
 				width: 0,
 			});
 		});
+
 		return () => ctx.revert();
 	}, []);
 

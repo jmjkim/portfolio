@@ -405,4 +405,14 @@ body {
   letter-spacing: .5em;
   color: #FFF;
 }
+
+.tally-form-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 80vh;
+  padding: 0 100px;
+  transform: translate(-50%, -50%);
+}
 /*  */
