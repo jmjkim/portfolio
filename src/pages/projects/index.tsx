@@ -3,7 +3,7 @@ import { ProjectData } from '../api/projects';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-const LandingPageForProjects = ({ projects }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const ProjectsLandingPage = ({ projects }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     const router = useRouter()
     return (
         <>
@@ -19,7 +19,7 @@ const LandingPageForProjects = ({ projects }: InferGetServerSidePropsType<typeof
         // <Link href="/kartrade">kartrade</Link>
 }
 
-export default LandingPageForProjects
+export default ProjectsLandingPage
 
 export async function getServerSideProps() {
     const res = await fetch(`http://localhost:3000/api/projects`);
