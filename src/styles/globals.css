@@ -3,10 +3,12 @@
   padding: 0;
   box-sizing: border-box;
   /* font-family: "Neue Montreal"; */
+  /* font-family: "Neue Montreal"; */
 }
 
 body {
   background: #000;
+  color: #FFF;
   color: #FFF;
 }
 
@@ -31,7 +33,6 @@ body {
   letter-spacing: -0.2px;
   text-transform: uppercase;
   line-height: 100px;
-  color: #FFF;
 }
 
 .site-menu {
@@ -140,13 +141,16 @@ body {
 
 .projects-navbar {
   position: absolute;
+  position: absolute;
   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   font-size: 2.5em;
+  font-size: 2.5em;
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-evenly;
 }
 
@@ -161,6 +165,10 @@ body {
 .projects-navbar .project-container > a {
   cursor: pointer;
   font-weight: 600;
+}
+
+.projects-navbar .project-container > a > span {
+  text-transform: uppercase;
 }
 
 .projects-navbar .project-container > a > span {
@@ -260,7 +268,7 @@ body {
   font-size: 140px;
   position: absolute;
   left: 25%;
-  color: #000;
+  /* color: #000; */
   transform: rotate(90deg);
 }
 
@@ -308,6 +316,29 @@ body {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: .5em;
+  letter-spacing: .5em;
   color: #FFF;
 }
+
+.revealer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #FFF;
+}
 /*  */
+
+
+/* form */
+.tally-form-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 80vh;
+  padding: 0 25%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+

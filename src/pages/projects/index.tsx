@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import BackToMainBtn from '@/components/BackToMainBtn';
 
 
-const LandingPageForProjects = ({ projects }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const ProjectsLandingPage = ({ projects }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     const router = useRouter()
 
     const handleLinkClick = (title: string) => {
@@ -59,7 +59,7 @@ const LandingPageForProjects = ({ projects }: InferGetServerSidePropsType<typeof
     )
 }
 
-export default LandingPageForProjects
+export default ProjectsLandingPage
 
 export async function getServerSideProps() {
     const res = await fetch(`http://localhost:3000/api/projects`);
