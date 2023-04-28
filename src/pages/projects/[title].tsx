@@ -4,21 +4,40 @@ import { gsap } from "gsap";
 import Image from "next/image";
 import { useEffect } from "react";
 import github from "../../../public/github.svg";
-import demonstration from "../../../public/demonstration.png";
 import { useRouter } from "next/router";
+import demonstration from "../../../public/demonstration.png";
 
 const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     const router = useRouter()
 
     useEffect(() => {
-        const ctx = gsap.context(() => {         
+        const ctx = gsap.context(() => {  
+            gsap.from(
+                ".revealer", 
+                {
+                    duration: 1,
+                    width: "0%",
+                    ease: "power3.inOut",
+                });
+          
+            gsap.to(
+                ".revealer", 
+                {
+                  duration: 2.5,
+                  delay: 2,
+                  left: "100%",
+                  display: "none",
+                  ease: "power3.inOut",
+                });
+            
             gsap.to(
                 ".loader-text-wrapper",
                 {
                     opacity: 0,
                     display: "none",
                     ease: "power3.inOut",
-                    duration: 3,
+                    delay: .8,
+                    duration: 2.5,
                 });
 
             gsap.to(
@@ -27,8 +46,8 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                     y: 600,
                     duration: 1.5,
                     ease: "power3.inOut",
-                    delay: 3,
-                    repeat: 2,
+                    delay: 4,
+                    repeat: 3,
                     display: "none",
                     opacity: 0,
                 });
@@ -64,16 +83,21 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                         <a href={`https://github.com/jmjkim/${project.title}`} target="_blank">
                             <Image src={github} alt="github" width={80} height={80} />
                         </a>
-                        <a href={project.demonstration} target="_blank">
-                            <Image src={demonstration} alt="demonstration" width={80} height={80} />
-                        </a>
+                        {project.demonstration !== "" ?
+                            <a href={project.demonstration} target="_blank">
+                                <Image src={demonstration} alt="demonstration" width={80} height={80} />
+                            </a> : null
+                        }
                     </div>
                   </div>
                 </div>
             </div>
 
-            <div className="back-to-main-btn" onClick={() => router.push("/projects")}>back to projects</div>
+            <div className="back-to-main-btn" onClick={() => router.push("/projects")}>
+                back to projects
+            </div>
 
+            <div className="revealer"></div>
             <div className="loader-text-wrapper block">
                 <h1 className="loader-text">{project.title}</h1>
             </div>
