@@ -43,7 +43,7 @@ const ProjectsLandingPage = ({ projects }: InferGetServerSidePropsType<typeof ge
                         <>
                             <div className="project-container">
                                 <a key={project.title} onClick={() => handleLinkClick(project.title)}>
-                                    <span>{project.title}</span>
+                                    <p>{project.title}</p>
                                     <div className="img-container">
                                         <Image src={projectMainImg} alt={project.title} width={500} height={500} priority />
                                     </div>

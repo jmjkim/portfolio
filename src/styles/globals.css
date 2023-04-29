@@ -31,7 +31,7 @@ body {
     align-items: center;
     justify-content: space-evenly;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 1.5em;
     height: 100%;
   }
   
@@ -97,7 +97,7 @@ body {
     text-transform: uppercase;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: 1.5em;
     animation: marquee-animation 10s linear infinite;
     animation-delay: 3s;
   }
@@ -119,6 +119,39 @@ body {
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+  }
+  
+  .project-container {
+    background-color: #111;
+    padding: 4em;
+    margin: .25em .5em;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .projects-navbar .project-container a img {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 25%;
+    top: 0;
+    left: 50%;
+    transform: scale(.75);
+    width: 50%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .back-to-main-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.5em;
   }
 }
 
@@ -258,29 +291,20 @@ body {
   justify-content: space-evenly;
 } */
 
-.project-container {
+/* .project-container {
   background-color: #111;
   position: relative;
   padding: 6em 2em;
   mix-blend-mode: difference;
   text-align: center;
-}
+} */
 
-.projects-navbar .project-container > a {
+/* .projects-navbar .project-container > a {
   cursor: pointer;
   font-weight: 600;
-}
+} */
 
-.projects-navbar .project-container > a > span {
-  text-transform: uppercase;
-}
-
-.projects-navbar .project-container > a > span {
-  text-transform: uppercase;
-  letter-spacing: 10px;
-}
-
-.projects-navbar .project-container a img {
+/* .projects-navbar .project-container a img {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -296,9 +320,9 @@ body {
 .projects-navbar .project-container a:hover img {
   opacity: 85%;
   transform: scale(1);
-}
+} */
 
-.back-to-main-btn {
+/* .back-to-main-btn {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -313,7 +337,7 @@ body {
   text-decoration: underline;
   color: #9e9e9e;
   cursor: pointer;
-}
+} */
 
 
 
