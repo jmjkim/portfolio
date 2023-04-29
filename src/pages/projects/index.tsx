@@ -30,7 +30,6 @@ const ProjectsLandingPage = ({ projects }: InferGetServerSidePropsType<typeof ge
                 },
             );
         });
-
         return () => ctx.revert();
     }, [])
 
