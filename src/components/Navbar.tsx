@@ -6,8 +6,12 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="site-menu">
-                <div className="menu-item" onClick={() => router.push("/projects")}>projects</div>
-                <div className="menu-item" onClick={() => router.push('/contact')}>contact</div>
+                <div onClick={() => router.push("/projects")}>
+                    projects
+                </div>
+                <div onClick={() => router.push('/contact')}>
+                    contact
+                </div>
             </div>
         </div>
     )

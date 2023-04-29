@@ -2,9 +2,8 @@ import { gsap, Expo, Power2 } from "gsap";
 import anime from 'animejs';
 import { useRef, useEffect } from 'react';
 import Navbar from '../components/Navbar'
-import CenterFloatingImageDisplayer from '../components/landing_page/CenterFloatingImageDisplayer';
-import InfoDisplayer from '../components/landing_page/InfoDisplayer';
-import MarqueeDisplayer from '../components/landing_page/MarqueeDisplayer';
+import Image from "next/image";
+import cat from "../../public/cat.png";
 
 export default function Home() {
   const app = useRef()
@@ -81,7 +80,6 @@ export default function Home() {
         },
       );
     }, app.current);
-    
     return () => ctx.revert();
   }, []);
 
@@ -89,9 +87,17 @@ export default function Home() {
     <div ref={app.current} className='main-container'>
       <Navbar />
       <p className="title">meow meow meow</p>
-      <CenterFloatingImageDisplayer />
-      <InfoDisplayer />
-      <MarqueeDisplayer />
+      <div className="floating-image-container">
+        <div className="cat-img">
+            <Image src={cat} alt="cat" width={2400} height={2400} />
+        </div>
+      </div>
+      <div className="info">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet consectetur erat, sed lacinia leo. Pellentesque ultrices et quam et pellentesque.
+      </div>
+      <div className="marquee">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
     </div>
   )
 }

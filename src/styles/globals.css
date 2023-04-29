@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "Neue Montreal"; */
 }
 
 body {
@@ -10,7 +9,123 @@ body {
   color: #FFF;
 }
 
-.main-container {
+@media only screen and (max-width: 600px) {
+  .main-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 9999;
+  }
+
+  .site-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    font-size: 18px;
+    height: 100%;
+  }
+  
+  .floating-image-container {
+    position: absolute;
+    top: 120vh;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    width: 200vw;
+    animation: bounce 5s infinite ease-in-out;
+    animation-delay: 5s;
+    z-index: -1;
+}
+
+  @keyframes bounce {
+    0% {
+        top: 35vh;
+    }
+
+    50% {
+        top: 40vh;
+    }
+
+    100% {
+        top: 35vh;
+    }
+  }
+
+  .title {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 8vw;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .title .letter {
+    display: inline-block;
+  }
+
+  .cat-img img {
+    width: 100%;
+  }
+
+  .info {
+    position: absolute;
+    bottom: 8em;
+    letter-spacing: 1.5px;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    color: #999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .marquee {
+    position: absolute;
+    bottom: 0;
+    white-space: nowrap;
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 2em;
+    animation: marquee-animation 10s linear infinite;
+    animation-delay: 3s;
+  }
+
+  @keyframes marquee-animation {
+    0% {
+        transform: translate(60%, 0);
+    }
+  
+    100% {
+        transform: translate(-100%, 0);
+    }
+  }
+
+  .projects-navbar {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+
+
+/* .main-container {
   position: fixed;
   top: 0;
   width: 100%;
@@ -25,16 +140,15 @@ body {
   height: 100px;
   padding: 0 40px;
   display: flex;
-  justify-content: space-between;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.2px;
   text-transform: uppercase;
   line-height: 100px;
   z-index: 9999;
-}
+} */
 
-.site-menu {
+/* .site-menu {
   display: flex;
   margin-left: auto;
 }
@@ -42,9 +156,9 @@ body {
 .menu-item {
   margin-left: 60px;
   cursor: pointer;
-}
+} */
 
-.floating-image-container {
+/* .floating-image-container {
   position: absolute;
   top: 120vh;
   left: 50%;
@@ -53,9 +167,9 @@ body {
   animation: bounce 5s infinite ease-in-out;
   animation-delay: 5s;
   z-index: -9999;
-}
+} */
 
-@keyframes bounce {
+/* @keyframes bounce {
   0% {
       top: 35vh;
   }
@@ -67,27 +181,22 @@ body {
   100% {
       top: 35vh;
   }
-}
+} */
 
-.cat-img img {
+/* .cat-img img {
   width: 100%;
-}
+} */
 
-.title {
+/* .title {
   margin-top: 100px;
   text-align: center;
   font-size: 7vw;
   font-weight: 800;
   text-transform: uppercase;
   overflow: hidden;
-}
+} */
 
-.title .letter {
-  display: inline-block;
-  line-height: 1em;
-}
-
-.info {
+/* .info {
   position: fixed;
   bottom: 5em;
   left: 50%;
@@ -101,9 +210,9 @@ body {
   text-transform: uppercase;
   padding: 10px 20px;
   font-size: 18px;
-}
+} */
 
-.marquee {
+/* .marquee {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -126,9 +235,9 @@ body {
   padding-left: -10%;
   animation: marquee-animation 12s linear infinite;
   animation-delay: 4s;
-}
+} */
 
-@keyframes marquee-animation {
+/* @keyframes marquee-animation {
   0% {
       transform: translate(170%, 0);
   }
@@ -136,9 +245,9 @@ body {
   100% {
       transform: translate(-100%, 0);
   }
-}
+} */
 
-.projects-navbar {
+/* .projects-navbar {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -147,7 +256,7 @@ body {
   font-size: 2.5em;
   display: flex;
   justify-content: space-evenly;
-}
+} */
 
 .project-container {
   background-color: #111;
@@ -331,14 +440,14 @@ body {
 
 .self-introduction-wrapper {
   font-size: 36px;
-  line-height: 1.25em;
+  line-height: 1.5em;
   letter-spacing: 4px;
   text-transform: uppercase;
   margin: 40px 20px;
 }
 
 .self-introduction-wrapper a img {
-  margin-top: -50px;
+  margin-top: -120px;
   margin-left: 75%;
   width: 150px;
   height: 150px;

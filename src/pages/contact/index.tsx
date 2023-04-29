@@ -25,10 +25,16 @@ const ContactLandingPage = () => {
 			gsap.from(
 				".contact-page-wrapper",
 				{
-					delay: 1,
-					duration: 1.5,
-					ease: "power1.inOut",
-					width: 0,
+					width: "0%",
+				});
+
+			gsap.to(
+				".contact-page-wrapper",
+				{
+					duration: 2,
+					ease: "power3.out",
+					width: "100%",
+					opacity: "100%",
 				});
 
 			linkedIn?.addEventListener("mouseover", () => animation.play())
@@ -42,7 +48,8 @@ const ContactLandingPage = () => {
 			<div className='tally-form-wrapper'>
 				<div dangerouslySetInnerHTML={{ __html: tallyEmbedCode }} />
 				<div className="self-introduction-wrapper">
-					<p>hi there, i am looking for a jr frontend developer position in bay area, ca.</p>
+					<p>hi there,</p>
+					<p>i am looking for a jr frontend developer position in bay area, ca.</p>
 					<br />
 					<a href="https://www.linkedin.com/in/jmjkim/" target="_blank">
 						<Image id="linkedin" src={linkedin} alt="linkedin" width={80} height={80} />
