@@ -84,7 +84,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div ref={app.current} className='main-container'>
+    <div ref={app.current} className='landing-page-container'>
       <Navbar />
       <p className="title">meow meow meow</p>
       <div className="floating-image-container">
@@ -99,5 +99,6 @@ export default function Home() {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </div>
     </div>
+
   )
 }

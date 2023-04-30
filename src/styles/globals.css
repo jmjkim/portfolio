@@ -9,13 +9,38 @@ body {
   color: #FFF;
 }
 
+
 @media only screen and (max-width: 600px) {
-  .main-container {
-    position: fixed;
+  .revealer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #FFF;
+  }
+
+  .back-to-main-btn {
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 20px 0;
+    transform: translate(-50%, 0);
+    letter-spacing: 4px;
+    font-size: 1em;
+  }
+
+  /* Main landing page */
+  .landing-page-container {
+    position: absolute;
     top: 0;
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    text-transform: uppercase;
+    text-align: center;
   }
 
   .navbar {
@@ -24,14 +49,15 @@ body {
     width: 100%;
     height: 100px;
     z-index: 9999;
+    text-transform: uppercase;
+    background-color: #000;
   }
 
   .site-menu {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 1em;
     height: 100%;
   }
   
@@ -65,7 +91,6 @@ body {
     text-align: center;
     font-size: 8vw;
     font-weight: 800;
-    text-transform: uppercase;
   }
 
   .title .letter {
@@ -78,15 +103,14 @@ body {
 
   .info {
     position: absolute;
-    bottom: 8em;
+    bottom: 4em;
+    width: 100%;
+    padding: 0 20px;
     letter-spacing: 1.5px;
     line-height: 1.5em;
-    text-transform: uppercase;
     color: #999;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .marquee {
@@ -94,9 +118,7 @@ body {
     bottom: 0;
     white-space: nowrap;
     display: flex;
-    text-transform: uppercase;
     font-weight: 600;
-    text-transform: uppercase;
     font-size: 1.5em;
     animation: marquee-animation 10s linear infinite;
     animation-delay: 3s;
@@ -104,18 +126,23 @@ body {
 
   @keyframes marquee-animation {
     0% {
-        transform: translate(60%, 0);
+        transform: translate(90%, 0);
     }
   
     100% {
         transform: translate(-100%, 0);
     }
   }
+  /*  */
 
-  .projects-navbar {
-    position: absolute;
-    top: 100px;
+
+
+
+  /* Landing page for projects */
+  .project-list-wrapper {
+    margin-top: 100px;
     width: 100%;
+    padding: 0 20px;
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
@@ -126,39 +153,152 @@ body {
   .project-container {
     background-color: #111;
     padding: 4em;
-    margin: .25em .5em;
-    text-align: left;
+    margin: .25em;
+    text-align: center;
     font-weight: 600;
+    letter-spacing: .5em;
   }
 
-  .projects-navbar .project-container a img {
+  .project-list-wrapper .project-container a img {
     position: absolute;
     border-radius: 50%;
-    opacity: 25%;
+    opacity: 40%;
     top: 0;
     left: 50%;
-    transform: scale(.75);
+    transform: scale(.8);
     width: 50%;
     height: 100%;
     object-fit: fill;
   }
+  /*  */
 
-  .back-to-main-btn {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
+
+
+  /* Landing page for project */
+  .container {
+    margin-top: 100px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     text-transform: uppercase;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
+  }
+
+  #scroll-arrow {
+    font-size: 100px;
+    position: absolute;
+    left: 50%;
+    transform: rotate(90deg);
+  }
+
+  .cols {
+    padding: 0 20px;
+  }
+
+  .col-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-wrapper {
+    padding-bottom: 60px;
+  }
+
+  .img-wrapper img {
+    border: 1px solid #333;
+    width: 100%;
+    height: auto;
+  }
+
+  .col-right {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     font-size: 1.5em;
+    line-height: 2em;
+    letter-spacing: 2px;
+    padding-bottom: 60px;
+    /* border-bottom: 1px solid #333; */
   }
+  
+  .col-right .link-stack-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .col-right .link-stack-wrapper .stack-wrapper {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+  }
+  
+  .col-right .link-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    height: 80px;
+  }
+
+  .col-right .link-wrapper a img {
+    width: 100%;
+    height: 100%;
+    margin-top: -5px;
+  }
+
+  .loader-text-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+  }
+
+  .loader-text {
+    font-size: 50px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    letter-spacing: .5em;
+    color: #FFF;
+  }
+
+
+
+
+  /* Landing page for contact */
+  .contact-page-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+  } 
+
+  .tally-form-wrapper {
+    position: relative;
+    top: 100px;
+  } 
+
+  .self-introduction-wrapper {
+    margin-top: 120px;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .self-introduction-wrapper a img {
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  /*  */
 }
 
 
 
 
-/* .main-container {
+/* .landing-page-container {
   position: fixed;
   top: 0;
   width: 100%;
@@ -342,14 +482,14 @@ body {
 
 
 /* Project Displayer */
-.container {
-  margin-top: 100px;
-  width: 100%;
-}
+  /* .container {
+    margin-top: 100px;
+    width: 100%;
+  }
 
-.cols {
-  display: flex;
-}
+  .cols {
+    display: flex;
+  }
 
 .col-right {
   position: relative;
@@ -435,17 +575,17 @@ body {
   .col {
     width: 100%;
   }
-}
+} */
 
-.block {
+/* .block {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
-}
+} */
 
-.contact-page-wrapper {
+/* .contact-page-wrapper {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -485,5 +625,5 @@ body {
   width: 100%;
   height: 100vh;
   background: #FFF;
-}
+} */
 /*  */

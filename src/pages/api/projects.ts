@@ -43,7 +43,7 @@ export const projectDataInfo: ProjectData[] = [
 
   {
     title: "eventeller",
-    description: "become a host of multiple events",
+    description: "become a host of unique events",
     mainImage: "/public/projects/eventeller/eventeller_main.png",
     detailImages: [
       "/public/projects/eventeller/eventeller_1.png",

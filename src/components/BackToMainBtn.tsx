@@ -5,7 +5,7 @@ const BackToMainBtn = () => {
 
     return (
         <div className="back-to-main-btn" onClick={() => router.push('/')}>
-            Back to Main
+            <p>back to main</p>
         </div>
     )
 }

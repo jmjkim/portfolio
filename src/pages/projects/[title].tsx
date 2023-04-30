@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import github from "../../../public/github.svg";
 import { useRouter } from "next/router";
 import demonstration from "../../../public/demonstration.png";
+import BackToMainBtn from "@/components/BackToMainBtn";
 
 const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     const router = useRouter()
@@ -43,7 +44,7 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
             gsap.to(
                 "#scroll-arrow",
                 {
-                    y: 600,
+                    y: "100%",
                     duration: 1.5,
                     ease: "power3.inOut",
                     delay: 4,
@@ -74,33 +75,33 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                   <div className="col col-right">
                     <h1>{project.title}</h1>
                     <br />
-                    {project.stacks.map(stack => { return <li key={stack}>{stack}</li> })}
-                    <br />
+                    <div className="link-stack-wrapper">
+                        <div className="stack-wrapper">
+                            {project.stacks.map(stack => {
+                                return <li key={stack}>{stack}</li>
+                            })}
+                        </div>
+                        <div className="link-wrapper">
+                            <a href={`https://github.com/jmjkim/${project.title}`} target="_blank">
+                                <Image src={github} alt="github" width={80} height={80} />
+                            </a>
+                            {project.demonstration !== "" ?
+                                <a href={project.demonstration} target="_blank">
+                                    <Image src={demonstration} alt="demonstration" width={80} height={80} />
+                                </a> : null
+                            }
+                        </div>
+                    </div>
                     <br />
                     <p>{project.description}</p>
-
-                    <div className="link-wrapper">
-                        <a href={`https://github.com/jmjkim/${project.title}`} target="_blank">
-                            <Image src={github} alt="github" width={80} height={80} />
-                        </a>
-                        {project.demonstration !== "" ?
-                            <a href={project.demonstration} target="_blank">
-                                <Image src={demonstration} alt="demonstration" width={80} height={80} />
-                            </a> : null
-                        }
-                    </div>
+                  </div>
+                  <div className="back-to-main-btn" onClick={() => router.push("/projects")}>
+                    back to projects
                   </div>
                 </div>
             </div>
 
-            <div className="back-to-main-btn" onClick={() => router.push("/projects")}>
-                back to projects
-            </div>
-
             <div className="revealer"></div>
-            <div className="loader-text-wrapper block">
-                <h1 className="loader-text">{project.title}</h1>
-            </div>
         </>
     )
 }

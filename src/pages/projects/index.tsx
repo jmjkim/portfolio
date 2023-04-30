@@ -35,10 +35,10 @@ const ProjectsLandingPage = ({ projects }: InferGetServerSidePropsType<typeof ge
 
     return (
         <>
-            <div className="projects-navbar">
+            <div className="project-list-wrapper">
                 {projects.map(project => {
                     const projectMainImg = project.mainImage.replace("/public", "")
-
+                    
                     return (
                         <>
                             <div className="project-container">
@@ -52,8 +52,8 @@ const ProjectsLandingPage = ({ projects }: InferGetServerSidePropsType<typeof ge
                         </>
                     )}
                 )}
+                <BackToMainBtn />
             </div>
-            <BackToMainBtn />
         </>
     )
 }
