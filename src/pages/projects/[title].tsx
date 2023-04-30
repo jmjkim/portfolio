@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import github from "../../../public/github.svg";
 import { useRouter } from "next/router";
 import demonstration from "../../../public/demonstration.png";
-import BackToMainBtn from "@/components/BackToMainBtn";
 
 const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     const router = useRouter()
@@ -17,7 +16,7 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                 ".revealer", 
                 {
                     duration: 1,
-                    width: "0%",
+                    left: 0,
                     ease: "power3.inOut",
                 });
           
@@ -25,9 +24,9 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                 ".revealer", 
                 {
                   duration: 2.5,
-                  delay: 2,
                   left: "100%",
                   display: "none",
+                  delay: 2,
                   ease: "power3.inOut",
                 });
             
@@ -96,12 +95,15 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                     <p>{project.description}</p>
                   </div>
                   <div className="back-to-main-btn" onClick={() => router.push("/projects")}>
-                    back to projects
+                    <p>back to projects</p>
                   </div>
                 </div>
             </div>
 
             <div className="revealer"></div>
+            <div className="loader-text-wrapper block">
+                <h1 className="loader-text">{project.title}</h1>
+            </div>
         </>
     )
 }

@@ -24,6 +24,7 @@ const ProjectsLandingPage = ({ projects }: InferGetServerSidePropsType<typeof ge
 
                 { 
                     scale: 1, 
+                    width: "100%",
                     opacity: "100%",
                     ease: "power2.inOut",
                     duration: 2.5,
