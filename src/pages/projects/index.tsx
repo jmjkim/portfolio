@@ -16,20 +16,26 @@ const ProjectsLandingPage = ({ projects }: InferGetServerSidePropsType<typeof ge
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.fromTo(
+            gsap.to(
                 ".project-container",
-                {
-                    scale: 4,
-                },
-
                 { 
                     scale: 1, 
                     width: "100%",
                     opacity: "100%",
-                    ease: "power2.inOut",
-                    duration: 2.5,
-                },
-            );
+                    ease: "power3.inOut",
+                    duration: 2,
+                });
+
+            gsap.from(
+                ".img-container img",
+                {
+                    scale: .5,
+                    opacity: 0,
+                    ease: "power3.inOut",
+                    delay: 1,
+                    duration: 1,
+                    stagger: .4,
+                });
         });
         return () => ctx.revert();
     }, [])
@@ -42,8 +48,8 @@ const ProjectsLandingPage = ({ projects }: InferGetServerSidePropsType<typeof ge
                     
                     return (
                         <>
-                            <div className="project-container">
-                                <a key={project.title} onClick={() => handleLinkClick(project.title)}>
+                            <div className="project-container" onClick={() => handleLinkClick(project.title)}>
+                                <a key={project.title}>
                                     <p>{project.title}</p>
                                     <div className="img-container">
                                         <Image src={projectMainImg} alt={project.title} width={500} height={500} priority />
@@ -53,8 +59,8 @@ const ProjectsLandingPage = ({ projects }: InferGetServerSidePropsType<typeof ge
                         </>
                     )}
                 )}
-                <BackToMainBtn />
             </div>
+            <BackToMainBtn />
         </>
     )
 }

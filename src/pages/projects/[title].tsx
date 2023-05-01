@@ -7,46 +7,65 @@ import github from "../../../public/github.svg";
 import { useRouter } from "next/router";
 import demonstration from "../../../public/demonstration.png";
 
+
 const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     const router = useRouter()
 
     useEffect(() => {
-        const ctx = gsap.context(() => {  
+        const ctx = gsap.context(() => {   
             gsap.from(
                 ".revealer", 
                 {
-                    duration: 1,
-                    left: 0,
                     ease: "power3.inOut",
+                    duration: 3,
+                    delay: 4,
                 });
-          
+
             gsap.to(
-                ".revealer", 
+                ".revealer",
                 {
-                  duration: 2.5,
-                  left: "100%",
-                  display: "none",
-                  delay: 2,
-                  ease: "power3.inOut",
+                    ease: "power3.inOut",
+                    duration: 3,
+                    delay: 4,
+                    left: "100%",
+                    display: "none",
                 });
-            
+
             gsap.to(
                 ".loader-text-wrapper",
                 {
                     opacity: 0,
                     display: "none",
                     ease: "power3.inOut",
-                    delay: .8,
-                    duration: 2.5,
+                    delay: 2,
+                    duration: 4,
+                });
+
+            gsap.from(
+                ".loader-text", 
+                {
+                    ease: "power3.inOut",
+                    delay: 2,
+                    duration: 4,
+                })
+
+            gsap.from(
+                ".container",
+                {
+                    opacity: 0,
+                    width: 0,
+                    ease: "power3.inOut",
+                    delay: 4,
+                    duration: 3,
                 });
 
             gsap.to(
                 "#scroll-arrow",
                 {
-                    y: "100%",
-                    duration: 1.5,
-                    ease: "power3.inOut",
-                    delay: 4,
+                    y: "50vh",
+                    duration: 2,
+                    ease: "power3.out",
+                    delay: 4.5,
                     repeat: 3,
                     display: "none",
                     opacity: 0,
@@ -57,21 +76,27 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
 
     return (
         <>
+
+            <div className="revealer"></div>
+            <div className="loader-text-wrapper">
+                <h1 className="loader-text">{project.title}</h1>
+            </div>
+
             <div className="container">
                 <div className="cols">
-                  <div className="col col-left">
+                  <div className="col-left">
                       <span id="scroll-arrow">&#62;</span>
-                        {project.detailImages.map((img, idx) => {
+                      {project.detailImages.map((img, idx) => {
                           return (
                             <>
                                 <div className="img-wrapper">
                                     <Image key={idx} src={img.replace("/public", "")} alt="project" width={400} height={400} priority />
                                 </div>
                             </>
-                          )
-                        })}
+                        )
+                      })}
                   </div>
-                  <div className="col col-right">
+                  <div className="col-right">
                     <h1>{project.title}</h1>
                     <br />
                     <div className="link-stack-wrapper">
@@ -82,7 +107,7 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                         </div>
                         <div className="link-wrapper">
                             <a href={`https://github.com/jmjkim/${project.title}`} target="_blank">
-                                <Image src={github} alt="github" width={80} height={80} />
+                                <Image src={github} alt="github" width={80} height={80} priority />
                             </a>
                             {project.demonstration !== "" ?
                                 <a href={project.demonstration} target="_blank">
@@ -98,11 +123,6 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                     <p>back to projects</p>
                   </div>
                 </div>
-            </div>
-
-            <div className="revealer"></div>
-            <div className="loader-text-wrapper block">
-                <h1 className="loader-text">{project.title}</h1>
             </div>
         </>
     )

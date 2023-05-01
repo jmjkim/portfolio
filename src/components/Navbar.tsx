@@ -7,10 +7,10 @@ const Navbar = () => {
         <div className="navbar">
             <div className="site-menu">
                 <div onClick={() => router.push("/projects")}>
-                    projects
+                    <p>projects</p>
                 </div>
                 <div onClick={() => router.push('/contact')}>
-                    contact
+                    <p>contact</p>
                 </div>
             </div>
         </div>

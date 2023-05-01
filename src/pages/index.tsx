@@ -1,7 +1,6 @@
 import { gsap, Expo, Power2 } from "gsap";
 import anime from 'animejs';
 import { useRef, useEffect } from 'react';
-import Navbar from '../components/Navbar'
 import Image from "next/image";
 import cat from "../../public/cat.png";
 
@@ -40,7 +39,7 @@ export default function Home() {
         { 
           duration: 2, 
           scale: ".2",
-          top: "35vh",
+          top: "45vh",
           ease: "Expo.easeInOut",
           delay: 3,
         },
@@ -85,7 +84,6 @@ export default function Home() {
 
   return (
     <div ref={app.current} className='landing-page-container'>
-      <Navbar />
       <p className="title">meow meow meow</p>
       <div className="floating-image-container">
         <div className="cat-img">
