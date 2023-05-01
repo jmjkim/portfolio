@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'BrownSugar';
+  src: url('../../public/font/BrownSugar.ttf') format('ttf');
+  /* src: url('../../public/font/Confillia-Normal.otf') format('otf'); */
+  /* font-style: normal; */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +12,7 @@
 }
 
 body {
+  font-family: 'BrownSugar';
   background: #000;
   color: #FFF;
 }
@@ -309,7 +317,7 @@ body {
 }
 
 
-/* ------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------- */
 
 
 @media only screen and (min-width: 325px) and (max-width: 600px) {
@@ -320,15 +328,6 @@ body {
     transform: translate(-50%, -50%);
     transform: rotate(90deg);
   }
-
-  /* .revealer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #FFF;
-  } */
 
   .loader-text-wrapper {
     position: absolute;
@@ -474,33 +473,29 @@ body {
   .project-list-wrapper {
     margin-top: 100px;
     width: 100vw;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     font-size: 1em;
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-transform: uppercase;
     letter-spacing: .5em;
   }
   
   .project-container {
     background-color: #111;
-    padding: 4em;
+    padding: 1em;
     margin: .25em;
     text-align: center;
     font-weight: 600;
-    letter-spacing: .5em;
   }
 
-  .project-list-wrapper .project-container a img {
-    position: absolute;
+  .project-container .img-container > img {
     border-radius: 50%;
-    opacity: 50%;
+    padding: 5px;
     top: 0;
-    left: 50%;
-    transform: scale(.8);
     width: 50%;
     height: 100%;
-    object-fit: fill;
   }
   /*  */
 

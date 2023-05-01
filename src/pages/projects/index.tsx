@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import BackToMainBtn from '@/components/BackToMainBtn';
 
-
 const ProjectsLandingPage = ({ projects }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     const router = useRouter()
 
