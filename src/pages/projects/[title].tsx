@@ -17,16 +17,16 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                 ".revealer", 
                 {
                     ease: "power3.inOut",
-                    duration: 3,
-                    delay: 4,
+                    duration: 1,
+                    delay: 2,
                 });
 
             gsap.to(
                 ".revealer",
                 {
                     ease: "power3.inOut",
-                    duration: 3,
-                    delay: 4,
+                    duration: 1,
+                    delay: 2,
                     left: "100%",
                     display: "none",
                 });
@@ -37,16 +37,14 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                     opacity: 0,
                     display: "none",
                     ease: "power3.inOut",
-                    delay: 2,
-                    duration: 4,
+                    duration: 2,
                 });
 
             gsap.from(
                 ".loader-text", 
                 {
                     ease: "power3.inOut",
-                    delay: 2,
-                    duration: 4,
+                    duration: 2,
                 })
 
             gsap.from(
@@ -55,8 +53,8 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                     opacity: 0,
                     width: 0,
                     ease: "power3.inOut",
-                    delay: 4,
-                    duration: 3,
+                    delay: 2,
+                    duration: 1,
                 });
 
             gsap.to(
@@ -65,7 +63,7 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                     y: "50vh",
                     duration: 2,
                     ease: "power3.out",
-                    delay: 4.5,
+                    delay: 2,
                     repeat: 3,
                     display: "none",
                     opacity: 0,
