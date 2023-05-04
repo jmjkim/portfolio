@@ -36,16 +36,6 @@ body {
     cursor: pointer;
   }
 
-  #scroll-arrow {
-    font-size: 10em;
-    position: absolute;
-    z-index: 9999;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transform: rotate(90deg);
-  }
-
   .revealer {
     position: absolute;
     top: 0;
@@ -352,16 +342,6 @@ body {
 
 /* @media only screen and (min-width: 325px) and (max-width: 420px) { */
 @media only screen and (max-width: 600px) {
-  #scroll-arrow {
-    position: absolute;
-    z-index: 9999;
-    top: 50%;
-    font-size: 8em;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transform: rotate(90deg);
-  }
-
   .revealer {
     position: absolute;
     top: 0;

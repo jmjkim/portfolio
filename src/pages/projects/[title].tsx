@@ -51,7 +51,6 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                 ".container",
                 {
                     opacity: 0,
-                    width: 0,
                     ease: "power3.inOut",
                     delay: 2.5,
                     duration: 2,
@@ -65,18 +64,6 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                     stagger: .4,
                     duration: 2,
                     ease: "power3.inOut",
-                });
-
-            gsap.to(
-                "#scroll-arrow",
-                {
-                    y: "100%",
-                    duration: 2,
-                    ease: "power3.inOut",
-                    delay: 6,
-                    color: "#666",
-                    repeat: 3,
-                    display: "none",
                 });
         })
         return () => ctx.revert();
@@ -92,7 +79,6 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
             <div className="container">
                 <div className="cols">
                   <div className="col-left">
-                      <span id="scroll-arrow">&#62;</span>
                       {project.detailImages.map((img, idx) => {
                           return (
                             <div key={idx} className="img-wrapper">
