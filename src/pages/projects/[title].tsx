@@ -99,11 +99,11 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                         </div>
                         <div className="link-wrapper">
                             <a href={`https://github.com/jmjkim/${project.title}`} target="_blank">
-                                <Image src={github} alt="github" width={80} height={80} priority />
+                                <Image src={github} alt="github" width={100} height={100} priority />
                             </a>
                             {project.demonstration !== "" ?
                                 <a href={project.demonstration} target="_blank">
-                                    <Image src={demonstration} alt="demonstration" width={80} height={80} priority />
+                                    <Image src={demonstration} alt="demonstration" width={100} height={100} priority />
                                 </a> : null
                             }
                         </div>

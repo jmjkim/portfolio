@@ -2,7 +2,7 @@ import { gsap, Expo, Power2 } from "gsap";
 import anime from 'animejs';
 import { useRef, useEffect } from 'react';
 import Image from "next/image";
-import cat from "../../public/cat.png";
+import mainImage from "../../public/BrainComputer.svg";
 
 export default function Home() {
   const app = useRef()
@@ -15,44 +15,57 @@ export default function Home() {
           "<span class='letter'>$&</span>"
       );
 
+      // let t1 = gsap.timeline({ repeat: -1 })
+
       anime.timeline().add({
         targets: ".title .letter",
         translateY: [-200, 0],
         easing: "easeOutExpo",
         duration: 1500,
-        delay: (el, i) => 3500 + 50 * i,
+        delay: (el, i) => 3000 + 50 * i,
     });
-      
+ 
       gsap.to(
         ".floating-image-container", 
         { 
-          duration: 2,
+          duration: 1.5,
           top: "50vh",
           ease: "Expo.easeInOut",
           delay: 0.5, 
         }, 
+        
+        );
+        
+        gsap.to(
+          ".floating-image-container",
+          { 
+            duration: 1.5, 
+            scale: ".2",
+            top: "45vh",
+            ease: "Expo.easeInOut",
+            delay: 3,
+          },
+          );
 
-      );
-
-      gsap.to(
-        ".floating-image-container",
-        { 
-          duration: 2, 
-          scale: ".2",
-          top: "45vh",
-          ease: "Expo.easeInOut",
-          delay: 3,
-        },
-      );
-
-      gsap.from(
-        ".navbar > div",
+        gsap.to(
+          ".floating-image-container",
+          {
+            duration: 5,
+            rotateY: 360,
+            ease: "linear",
+            repeat: -1,
+            delay: 3.5,
+          },
+        )
+          
+        gsap.from(
+          ".navbar > div",
         {
           duration: 1.5,
           opacity: 0,
           y: -100,
           ease: Expo.easeInOut,
-          delay: 3,
+          delay: 2.5,
         },
       );
       
@@ -69,13 +82,13 @@ export default function Home() {
       );
 
       gsap.from(
-        ".info, .marquee", 
+        ".info", 
         {
           duration: 1, 
           opacity: 0,
           y: 100,
           ease: Power2.easeInOut,
-          delay: 3.5,
+          delay: 3,
         },
       );
     }, app.current);
@@ -87,14 +100,11 @@ export default function Home() {
       <p className="title">The most reliable way to predict the future is to create it</p>
       <div className="floating-image-container">
         <div className="cat-img">
-            <Image src={cat} alt="cat" width={2400} height={2400} priority />
+            <Image src={mainImage} alt="cat" width={2400} height={2400} priority />
         </div>
       </div>
       <div className="info">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet consectetur erat, sed lacinia leo. Pellentesque ultrices et quam et pellentesque.
-      </div>
-      <div className="marquee">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <p>powered by animejs - gsap</p>
       </div>
     </div>
 

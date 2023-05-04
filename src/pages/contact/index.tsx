@@ -31,15 +31,13 @@ const ContactLandingPage = () => {
 			gsap.to(".contact-page-revealer", {
 				display: "none",
 				top: "100%",
-				backgroundColor: "#000",
-				duration: 2,
+				duration: 1,
 				ease: "power3.inOut",
 			})
 
 			gsap.from(".contact-page-wrapper", {
-				y: "100%",
-				duration: 1,
-				delay: 2,
+				duration: 1.5,
+				filter: "blur(20px)",
 				ease: "power3.inOut",
 			});
 
@@ -93,8 +91,8 @@ const ContactLandingPage = () => {
 							<Image
 								src={linkedin}
 								alt='linkedin'
-								width={80}
-								height={80}
+								width={200}
+								height={200}
 							/>
 						</a>
 					</div>
