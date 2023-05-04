@@ -55,7 +55,6 @@ const ContactLandingPage = () => {
 				backgroundImage: "linear-gradient(to left top, #000, 100%, #FFF)",
 			},
 			{
-				delay: 1,
 				duration: 3,
 				backgroundImage: "linear-gradient(to right top, #FFF, 0%, #000)",
 			})
@@ -67,7 +66,7 @@ const ContactLandingPage = () => {
 				ease: "linear",
 			});
 
-			t1.repeatDelay(1);
+			t1.repeatDelay(.5);
 		});
 
 		return () => ctx.revert();
