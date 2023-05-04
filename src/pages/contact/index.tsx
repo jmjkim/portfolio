@@ -31,40 +31,40 @@ const ContactLandingPage = () => {
 			gsap.to(".contact-page-revealer", {
 				display: "none",
 				top: "100%",
+				backgroundColor: "#000",
 				duration: 2,
 				ease: "power3.inOut",
 			})
 
 			gsap.from(".contact-page-wrapper", {
 				y: "100%",
-				scale: 0,
-				duration: 2,
-				delay: 1.5,
+				duration: 1,
+				delay: 2,
 				ease: "power3.inOut",
 			});
 
 			t1.fromTo(".contact-page-wrapper", {
 				duration: 3,
-				backgroundImage: "linear-gradient(to right bottom, #000, 100%, #666)",
+				backgroundImage: "linear-gradient(to right bottom, #000, 100%, #FFF)",
 			},
 			{
 				duration: 3,
-				backgroundImage: "linear-gradient(to left bottom, #666, 0%, #000)",
+				backgroundImage: "linear-gradient(to left bottom, #FFF, 0%, #000)",
 			})
 
 			t1.fromTo(".contact-page-wrapper", {
 				duration: 3,
-				backgroundImage: "linear-gradient(to left top, #000, 100%, #666)",
+				backgroundImage: "linear-gradient(to left top, #000, 100%, #FFF)",
 			},
 			{
 				delay: 1,
 				duration: 3,
-				backgroundImage: "linear-gradient(to right top, #666, 0%, #000)",
+				backgroundImage: "linear-gradient(to right top, #FFF, 0%, #000)",
 			})
 
 			gsap.to(".self-introduction-wrapper a img", {
 				rotate: 360,
-				duration: 4,
+				duration: 2,
 				repeat: -1,
 				ease: "linear",
 			});

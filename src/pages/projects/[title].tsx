@@ -26,6 +26,7 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                 {
                     ease: "power3.inOut",
                     duration: 2,
+                    backgroundColor: "#000",
                     delay: 2,
                     left: "100%",
                     display: "none",
