@@ -10,12 +10,39 @@ body {
   color: #FFF;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 601px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    min-width: 100%;
+    height: 100px;
+    padding: 0 20px;
+    z-index: 9999;
+    text-transform: uppercase;
+    background-color: #000;
+  }
+
+  .site-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 22px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .site-menu p {
+    margin-left: 50px;
+    cursor: pointer;
+  }
+
   #scroll-arrow {
-    font-size: 8em;
+    font-size: 10em;
     position: absolute;
+    z-index: 9999;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1.25);
+    transform: translate(-50%, -50%);
     transform: rotate(90deg);
   }
 
@@ -28,6 +55,15 @@ body {
     background-color: #FFF;
   }
 
+  .contact-page-revealer {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFF;
+    z-index: 9999;
+  }
+
   .loader-text-wrapper {
     position: absolute;
     top: 50%;
@@ -35,6 +71,7 @@ body {
     width: 100vw;
     height: 100vh;
     transform: translate(-50%, -50%);
+    text-transform: uppercase;
     background-color: #000;
   }
 
@@ -42,10 +79,9 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(2);
-    font-size: 2em;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
     font-weight: 600;
-    text-transform: uppercase;
     letter-spacing: .5em;
   }
 
@@ -69,35 +105,12 @@ body {
   .landing-page-container {
     position: absolute;
     top: 0;
+    padding: 0 20px;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
     text-transform: uppercase;
     text-align: center;
-  }
-
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100px;
-    z-index: 9999;
-    text-transform: uppercase;
-    background-color: #000;
-  }
-
-  .site-menu {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: 1em;
-    margin-right: 20px;
-    height: 100%;
-  }
-
-  .site-menu p {
-    margin-left: 50px;
-    cursor: pointer;
   }
   
   .floating-image-container {
@@ -105,7 +118,7 @@ body {
     top: 100vh;
     left: 50%;
     transform: translate(-50%, -50%) scale(.1);
-    width: 100vw;
+    min-width: 100vw;
     animation: bounce 5s infinite ease-in-out;
     animation-delay: 5s;
     z-index: -1;
@@ -128,7 +141,7 @@ body {
   .title {
     margin-top: 100px;
     text-align: center;
-    font-size: 4em;
+    font-size: 3em;
     font-weight: 600;
   }
 
@@ -137,12 +150,12 @@ body {
   }
 
   .cat-img img {
-    width: 100%;
+    min-width: 100%;
   }
 
   .info {
     position: absolute;
-    font-size: 1em;
+    font-size: 1.5em;
     bottom: 4em;
     width: 100vw;
     padding: 0 20px;
@@ -156,7 +169,7 @@ body {
   .marquee {
     position: absolute;
     bottom: 0;
-    display: flex;
+    white-space: nowrap;
     font-weight: 600;
     font-size: 2em;
     animation: marquee-animation 8s linear infinite;
@@ -180,22 +193,31 @@ body {
   /* Landing page for projects */
   .project-list-wrapper {
     margin-top: 100px;
-    width: 100vw;
-    padding: 20px;
-    font-size: 1.5em;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 2em;
     font-weight: 600;
     letter-spacing: 1em;
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
   }
+
+  .project-list-wrapper p {
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+  }
   
   .project-container {
+    width: 100%;
     background-color: #111;
     cursor: pointer;
-    padding: 4.5em;
-    margin: .25em;
-    text-align: left;
+    font-weight: 600;
+    padding: 6em;
   }
 
   .project-container:hover {
@@ -205,12 +227,11 @@ body {
   .project-list-wrapper .project-container a img {
     position: absolute;
     border-radius: 50%;
-    padding: 10px;
-    top: 0;
-    right: 0;
-    transform: scale(1);
+    padding: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 300px;
-    height: 100%;
+    height: 300px;
   }
   /*  */
 
@@ -221,7 +242,7 @@ body {
   .container {
     margin-top: 100px;
     padding: 0 20px;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -229,15 +250,13 @@ body {
   }
 
   .col-left {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  
-  .img-wrapper {
     width: 100%;
-    min-height: 50vh;
-    padding: 10px;
+    height: auto;
+    display: grid;
+    padding: 1em;
+    gap: 1em;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #111;
   }
 
   .img-wrapper img {
@@ -246,10 +265,13 @@ body {
   }
 
   .col-right {
+    width: 100%;
+    height: auto;
     background-color: #111;
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin-top: 20px;
     font-size: 2em;
     line-height: 2em;
     letter-spacing: 4px;
@@ -286,15 +308,23 @@ body {
   /* Landing page for contact */
   .contact-page-wrapper {
     position: absolute;
-    top: 100px;
     width: 100vw;
-    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
-    padding: 0 20px;
+    flex-direction: column;
+    padding: 200px 20px;
   } 
+
+  .contact-page-subwrapper {
+    display: flex;
+  }
 
   .self-introduction-wrapper {
     position: relative;
+    width: 100%;
+    height: auto;
     font-size: 2em;
     line-height: 2em;
     text-align: center;
@@ -303,22 +333,51 @@ body {
   }
 
   .self-introduction-wrapper a img {
+    margin-top: -50px;
+    cursor: pointer;
     width: 200px;
     height: 200px;
+  }
+
+  .tally-form-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: auto 0;
   }
 }
 
 
-/* ----------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 
-@media only screen and (min-width: 325px) and (max-width: 420px) {
+/* @media only screen and (min-width: 325px) and (max-width: 420px) { */
+@media only screen and (max-width: 600px) {
   #scroll-arrow {
-    font-size: 4em;
     position: absolute;
+    z-index: 9999;
+    top: 50%;
+    font-size: 8em;
     left: 50%;
     transform: translate(-50%, -50%);
     transform: rotate(90deg);
+  }
+
+  .revealer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFF;
+  }
+
+  .contact-page-revealer {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFF;
+    z-index: 9999;
   }
 
   .loader-text-wrapper {
@@ -336,7 +395,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.5em;
+    font-size: 3em;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: .5em;
@@ -350,6 +409,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 4px;
     font-size: 1em;
+    cursor: pointer;
   }
 
 
@@ -359,6 +419,7 @@ body {
   .landing-page-container {
     position: absolute;
     top: 0;
+    padding: 0 20px;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -369,8 +430,9 @@ body {
   .navbar {
     position: fixed;
     top: 0;
-    width: 100vw;
+    min-width: 100%;
     height: 100px;
+    padding: 0 20px;
     z-index: 9999;
     text-transform: uppercase;
     background-color: #000;
@@ -380,8 +442,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    font-size: 1em;
+    font-size: 20px;
+    width: 100%;
     height: 100%;
+  }
+
+  .site-menu p {
+    margin-left: 50px;
+    cursor: pointer;
   }
   
   .floating-image-container {
@@ -389,7 +457,7 @@ body {
     top: 100vh;
     left: 50%;
     transform: translate(-50%, -50%) scale(.1);
-    width: 300vw;
+    min-width: 100vw;
     animation: bounce 5s infinite ease-in-out;
     animation-delay: 5s;
     z-index: -1;
@@ -421,7 +489,7 @@ body {
   }
 
   .cat-img img {
-    width: 100%;
+    min-width: 100%;
   }
 
   .info {
@@ -464,30 +532,43 @@ body {
   /* Landing page for projects */
   .project-list-wrapper {
     margin-top: 100px;
-    width: 100vw;
+    width: 100%;
     padding: 0 20px 20px 20px;
-    font-size: 1em;
     display: flex;
     flex-direction: column;
-    align-items: center;
     text-transform: uppercase;
     letter-spacing: .5em;
   }
+
+  .project-list-wrapper p {
+    z-index: 9999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+  }
   
   .project-container {
+    width: 100%;
     background-color: #111;
-    padding: 1em;
-    margin: .25em;
-    text-align: center;
+    padding: 10em;
     font-weight: 600;
+    cursor: pointer;
   }
 
-  .project-container .img-container > img {
+  .project-container:hover {
+    background-color: #222;
+  }
+
+  .project-list-wrapper .project-container a img {
+    position: absolute;
     border-radius: 50%;
-    padding: 5px;
-    top: 0;
-    width: 50%;
-    height: 100%;
+    padding: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
   }
   /*  */
 
@@ -498,7 +579,7 @@ body {
   .container {
     margin-top: 100px;
     padding: 0 20px;
-    width: 100vw;
+    min-width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -506,24 +587,30 @@ body {
   }
 
   .col-left {
+    min-width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 1em;
+    background-color: #111;
   }
+  
 
   .img-wrapper img {
-    margin-bottom: 20px;
+    padding: 1em;
     width: 100%;
     height: 100%;
   }
 
   .col-right {
+    background-color: #111;
     display: flex;
     flex-direction: column;
     text-align: center;
     font-size: 1em;
     line-height: 2em;
     letter-spacing: 2px;
-    margin: 40px 0;
+    padding: 1em;
+    margin: 1em 0;
   }
   
   .col-right .link-stack-wrapper {
@@ -558,27 +645,36 @@ body {
   /* Landing page for contact */
   .contact-page-wrapper {
     position: absolute;
-    top: 75px;
     width: 100vw;
-    height: auto;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    padding: 0 20px;
+    padding: 0 20px
   } 
+
+  .contact-page-subwrapper {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    padding-bottom: 20px;
+    flex-direction: column;
+  }
 
   .self-introduction-wrapper {
     position: relative;
     overflow-y: hidden;
     font-size: 1.25em;
-    line-height: 1.5em;
+    line-height: 1.25em;
     text-align: center;
     letter-spacing: 1.5px;
     text-transform: capitalize;
   }
 
-  .self-introduction-wrapper a {
-    position: relative;
-    bottom: 10%;
+  .self-introduction-wrapper a img {
+    margin-bottom: 20px;
   }
   /*  */
 }

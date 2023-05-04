@@ -17,7 +17,7 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                 ".revealer", 
                 {
                     ease: "power3.inOut",
-                    duration: 1,
+                    duration: 2,
                     delay: 2,
                 });
 
@@ -25,7 +25,7 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                 ".revealer",
                 {
                     ease: "power3.inOut",
-                    duration: 1,
+                    duration: 2,
                     delay: 2,
                     left: "100%",
                     display: "none",
@@ -37,14 +37,14 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                     opacity: 0,
                     display: "none",
                     ease: "power3.inOut",
-                    duration: 2,
+                    duration: 3,
                 });
 
             gsap.from(
                 ".loader-text", 
                 {
                     ease: "power3.inOut",
-                    duration: 2,
+                    duration: 3,
                 })
 
             gsap.from(
@@ -53,20 +53,30 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                     opacity: 0,
                     width: 0,
                     ease: "power3.inOut",
-                    delay: 2,
-                    duration: 1,
+                    delay: 2.5,
+                    duration: 2,
+                });
+
+            gsap.from(
+                ".img-wrapper", {
+                    y: 50,
+                    opacity: 0,
+                    delay: 3,
+                    stagger: .4,
+                    duration: 2,
+                    ease: "power3.inOut",
                 });
 
             gsap.to(
                 "#scroll-arrow",
                 {
-                    y: "50vh",
+                    y: "100%",
                     duration: 2,
-                    ease: "power3.out",
-                    delay: 2,
+                    ease: "power3.inOut",
+                    delay: 6,
+                    color: "#666",
                     repeat: 3,
                     display: "none",
-                    opacity: 0,
                 });
         })
         return () => ctx.revert();
@@ -74,7 +84,6 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
 
     return (
         <>
-
             <div className="revealer"></div>
             <div className="loader-text-wrapper">
                 <h1 className="loader-text">{project.title}</h1>
@@ -86,11 +95,9 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                       <span id="scroll-arrow">&#62;</span>
                       {project.detailImages.map((img, idx) => {
                           return (
-                            <>
-                                <div className="img-wrapper">
-                                    <Image key={idx} src={img.replace("/public", "")} alt="project" width={400} height={400} priority />
-                                </div>
-                            </>
+                            <div key={idx} className="img-wrapper">
+                                <Image src={img.replace("/public", "")} alt="project" width={400} height={400} priority />
+                            </div>
                         )
                       })}
                   </div>
@@ -109,7 +116,7 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                             </a>
                             {project.demonstration !== "" ?
                                 <a href={project.demonstration} target="_blank">
-                                    <Image src={demonstration} alt="demonstration" width={80} height={80} />
+                                    <Image src={demonstration} alt="demonstration" width={80} height={80} priority />
                                 </a> : null
                             }
                         </div>

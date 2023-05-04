@@ -84,10 +84,10 @@ export default function Home() {
 
   return (
     <div ref={app.current} className='landing-page-container'>
-      <p className="title">meow meow meow</p>
+      <p className="title">The most reliable way to predict the future is to create it</p>
       <div className="floating-image-container">
         <div className="cat-img">
-            <Image src={cat} alt="cat" width={2400} height={2400} />
+            <Image src={cat} alt="cat" width={2400} height={2400} priority />
         </div>
       </div>
       <div className="info">

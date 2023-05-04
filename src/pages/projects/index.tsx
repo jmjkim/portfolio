@@ -13,29 +13,27 @@ const ProjectsLandingPage = ({ projects }: InferGetServerSidePropsType<typeof ge
         router.push(`/projects/${title}`)
     }
 
+    
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.to(
-                ".project-container",
-                { 
-                    scale: 1, 
-                    width: "100%",
-                    opacity: "100%",
-                    ease: "power3.inOut",
-                    duration: 2,
-                });
-
             gsap.from(
-                ".img-container img",
-                {
-                    scale: .5,
-                    opacity: 0,
-                    ease: "power3.inOut",
-                    delay: 1,
+                ".project-list-wrapper .project-container",
+                { 
+                    x: "-10%",
+                    ease: "power3.in",
                     duration: 1,
                     stagger: .4,
                 });
-        });
+
+            gsap.from(
+                ".project-container a img",
+                {
+                    ease: "power3.in",
+                    duration: 1,
+                    rotate: 90,
+                    stagger: .4,
+                });
+            });
         return () => ctx.revert();
     }, [])
 
@@ -50,9 +48,7 @@ const ProjectsLandingPage = ({ projects }: InferGetServerSidePropsType<typeof ge
                             <div className="project-container" onClick={() => handleLinkClick(project.title)}>
                                 <a key={project.title}>
                                     <p>{project.title}</p>
-                                    <div className="img-container">
-                                        <Image src={projectMainImg} alt={project.title} width={500} height={500} priority />
-                                    </div>
+                                    <Image src={projectMainImg} alt={project.title} width={500} height={500} priority />
                                 </a>
                             </div>
                         </>

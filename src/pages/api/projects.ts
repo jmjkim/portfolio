@@ -14,11 +14,14 @@ export const projectDataInfo: ProjectData[] = [
   {
     title: "kartrade",
     description: "become an international seller of exclusive k-pop proudcts",
-    mainImage: "/public/projects/kartrade/kartrade_logo.png",
+    mainImage: "/public/projects/kartrade/12.png",
     detailImages: [
-      "/public/projects/kartrade/kartrade_1.png",
-      "/public/projects/kartrade/kartrade_2.png",
-      "/public/projects/kartrade/kartrade_3.png",
+      "/public/projects/kartrade/1.png",
+      "/public/projects/kartrade/3.png",
+      "/public/projects/kartrade/4.png",
+      "/public/projects/kartrade/7.png",
+      "/public/projects/kartrade/9.png",
+      "/public/projects/kartrade/8.png",
     ],
     stacks: [
       "html", "css", "chakra ui", "typescript", "nextjs", "firebase (to be implemented)",
@@ -26,35 +29,35 @@ export const projectDataInfo: ProjectData[] = [
     demonstration: "",
   },
 
-  {
-    title: "lamborghinian",
-    description: "become a member of the lamborghinian",
-    mainImage: "/public/projects/lamborghinian/lamborghinian_main.png",
-    detailImages: [
-      "/public/projects/lamborghinian/lamborghinian_1.png",
-      "/public/projects/lamborghinian/lamborghinian_2.png",
-      "/public/projects/lamborghinian/lamborghinian_3.png",
-    ],
-    stacks: [
-      "html", "css", "react", "rails"
-    ],
-    demonstration: "https://www.youtube.com/watch?v=hCBBGYJejYQ",
-  },
+  // {
+  //   title: "lamborghinian",
+  //   description: "become a member of the lamborghinian",
+  //   mainImage: "/public/projects/lamborghinian/lamborghinian_main.png",
+  //   detailImages: [
+  //     "/public/projects/lamborghinian/lamborghinian_1.png",
+  //     "/public/projects/lamborghinian/lamborghinian_2.png",
+  //     "/public/projects/lamborghinian/lamborghinian_3.png",
+  //   ],
+  //   stacks: [
+  //     "html", "css", "react", "rails"
+  //   ],
+  //   demonstration: "https://www.youtube.com/watch?v=hCBBGYJejYQ",
+  // },
 
-  {
-    title: "eventeller",
-    description: "become a host of unique events",
-    mainImage: "/public/projects/eventeller/eventeller_main.png",
-    detailImages: [
-      "/public/projects/eventeller/eventeller_1.png",
-      "/public/projects/eventeller/eventeller_2.png",
-      "/public/projects/eventeller/eventeller_3.png",
-    ],
-    stacks: [
-      "html", "css", "react", "rails"
-    ],
-    demonstration: "https://www.youtube.com/watch?v=F22JO5Oouto",
-  },
+  // {
+  //   title: "eventeller",
+  //   description: "become a host of unique events",
+  //   mainImage: "/public/projects/eventeller/eventeller_main.png",
+  //   detailImages: [
+  //     "/public/projects/eventeller/eventeller_1.png",
+  //     "/public/projects/eventeller/eventeller_2.png",
+  //     "/public/projects/eventeller/eventeller_3.png",
+  //   ],
+  //   stacks: [
+  //     "html", "css", "react", "rails"
+  //   ],
+  //   demonstration: "https://www.youtube.com/watch?v=F22JO5Oouto",
+  // },
 ]
 
 export default function handler(

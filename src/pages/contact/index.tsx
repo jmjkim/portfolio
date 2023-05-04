@@ -26,57 +26,93 @@ const ContactLandingPage = () => {
 		}
 
 		const ctx = gsap.context(() => {
-			gsap.to(".self-introduction-wrapper a img", {
-				rotate: 360,
+			let t1 = gsap.timeline({ repeat: -1 })
+
+			gsap.to(".contact-page-revealer", {
+				display: "none",
+				top: "100%",
 				duration: 2,
-				repeat: -1,
-				ease: "power3.out",
-			});
+				ease: "power3.inOut",
+			})
 
 			gsap.from(".contact-page-wrapper", {
-				scale: 0.5,
-				opacity: 0,
+				y: "100%",
+				scale: 0,
+				duration: 2,
+				delay: 1.5,
 				ease: "power3.inOut",
-				duration: 1.5,
-				y: 200,
 			});
+
+			t1.fromTo(".contact-page-wrapper", {
+				duration: 3,
+				backgroundImage: "linear-gradient(to right bottom, #000, 100%, #666)",
+			},
+			{
+				duration: 3,
+				backgroundImage: "linear-gradient(to left bottom, #666, 0%, #000)",
+			})
+
+			t1.fromTo(".contact-page-wrapper", {
+				duration: 3,
+				backgroundImage: "linear-gradient(to left top, #000, 100%, #666)",
+			},
+			{
+				delay: 1,
+				duration: 3,
+				backgroundImage: "linear-gradient(to right top, #666, 0%, #000)",
+			})
+
+			gsap.to(".self-introduction-wrapper a img", {
+				rotate: 360,
+				duration: 4,
+				repeat: -1,
+				ease: "linear",
+			});
+
+			t1.repeatDelay(1);
 		});
+
 		return () => ctx.revert();
 	}, []);
 
 	return (
-		<div className='contact-page-wrapper'>
-			<div className='self-introduction-wrapper'>
-				<p>
-					hi, my name is jack. i&apos;m looking for a junior frontend developer
-					position in bay area, CA.
-				</p>
-				<br />
-				<a
-					href='https://www.linkedin.com/in/jmjkim/'
-					target='_blank'
-				>
-					<Image
-						src={linkedin}
-						alt='linkedin'
-						width={80}
-						height={80}
-					/>
-				</a>
+		<>
+			<div className="contact-page-revealer"></div>
+			<div className='contact-page-wrapper'>
+				<div className="contact-page-subwrapper">
+					<div className='self-introduction-wrapper'>
+						<p>
+							hi, my name is jack. i&apos;m looking for a junior frontend developer
+							position in bay area, CA.
+						</p>
+						<br />
+						<a
+							href='https://www.linkedin.com/in/jmjkim/'
+							target='_blank'
+						>
+							<Image
+								src={linkedin}
+								alt='linkedin'
+								width={80}
+								height={80}
+							/>
+						</a>
+					</div>
+					<div className='tally-form-wrapper'>
+						<iframe
+							width='100%'
+							height='353'
+							frameborder='0'
+							marginheight='0'
+							marginwidth='0'
+							title='null'
+							src='https://tally.so/embed/w5bR2E?alignLeft=1&hideTitle=1&dynamicHeight=1'
+						></iframe>
+					</div>
+				</div>
+				<BackToMainBtn />
 			</div>
-			<div className='tally-form-wrapper'>
-				<iframe
-					width='100%'
-					height='353'
-					frameborder='0'
-					marginheight='0'
-					marginwidth='0'
-					title='null'
-					src='https://tally.so/embed/w5bR2E?alignLeft=1&hideTitle=1&dynamicHeight=1'
-				></iframe>
-			</div>
-			<BackToMainBtn />
-		</div>
+		</>
 	);
 };
 
