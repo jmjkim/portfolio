@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import linkedin from "../../../public/linkedin.svg";
