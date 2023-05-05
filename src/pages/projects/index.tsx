@@ -1,3 +1,4 @@
+import absoluteUrl from "next-absolute-url";
 import { ProjectData } from "../api/projects";
 import { useEffect } from "react";
 import { gsap } from "gsap";
@@ -5,7 +6,7 @@ import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import BackToMainBtn from "@/components/BackToMainBtn";
-import absoluteUrl from "next-absolute-url";
+
 const ProjectsLandingPage = ({
 	projects,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {

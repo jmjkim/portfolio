@@ -1,3 +1,4 @@
+import absoluteUrl from "next-absolute-url";
 import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
 import { ProjectData } from "../api/projects";
 import { gsap } from "gsap";
@@ -123,7 +124,7 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
 export default ProjectDisplayer
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-    const res = await fetch(`http://localhost:3000/api/projects/${context.query.title}`);
+    const res = await fetch(`${absoluteUrl(context.req).origin}/api/projects/${context.query.title}`);
     const project: ProjectData = await res.json();
 
     return { props: { project } };
