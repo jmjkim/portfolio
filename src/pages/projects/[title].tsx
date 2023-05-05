@@ -75,7 +75,7 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
         <>
             <div className="revealer"></div>
             <div className="loader-text-wrapper">
-                <h1 className="loader-text">{project.title}</h1>
+                <p className="loader-text">{project.title}</p>
             </div>
 
             <div className="container">
