@@ -110,7 +110,7 @@ body {
 		min-width: 100vw;
 		animation: bounce 5s infinite ease-in-out;
 		animation-delay: 5s;
-		z-index: 9999;
+		z-index: -1;
 	}
 
 	@keyframes bounce {
@@ -411,7 +411,7 @@ body {
 		min-width: 100vw;
 		animation: bounce 5s infinite ease-in-out;
 		animation-delay: 5s;
-    z-index: 9999;
+    	z-index: -1;
 	}
 
 	@keyframes bounce {
