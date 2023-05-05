@@ -15,15 +15,13 @@ export default function Home() {
           "<span class='letter'>$&</span>"
       );
 
-      // let t1 = gsap.timeline({ repeat: -1 })
-
       anime.timeline().add({
         targets: ".title .letter",
         translateY: [-200, 0],
         easing: "easeOutExpo",
         duration: 1500,
         delay: (el, i) => 3000 + 50 * i,
-    });
+      });
  
       gsap.to(
         ".floating-image-container", 
@@ -32,44 +30,38 @@ export default function Home() {
           top: "50vh",
           ease: "Expo.easeInOut",
           delay: 0.5, 
-        }, 
+        });
         
-        );
-        
-        gsap.to(
-          ".floating-image-container",
-          { 
-            duration: 1.5, 
-            scale: ".2",
-            top: "45vh",
-            ease: "Expo.easeInOut",
-            delay: 3,
-          },
-          );
+      gsap.to(
+        ".floating-image-container",
+        { 
+          duration: 1.5, 
+          scale: ".2",
+          top: "45vh",
+          ease: "Expo.easeInOut",
+          delay: 3,
+        });
 
-        gsap.to(
-          ".floating-image-container",
-          {
-            duration: 5,
-            rotateY: 360,
-            ease: "linear",
-            repeat: -1,
-            delay: 3.5,
-          },
-        )
-          
-        gsap.from(
-          ".navbar > div",
+      gsap.to(
+        ".floating-image-container",
+        {
+          duration: 5,
+          rotateY: 360,
+          ease: "linear",
+          repeat: -1,
+          delay: 3.5,
+        });
+        
+      gsap.from(
+        ".navbar > div",
         {
           duration: 1.5,
           opacity: 0,
           y: -100,
           ease: Expo.easeInOut,
           delay: 2.5,
-        },
-      );
-      
-      
+        });
+    
       gsap.from(
         ".site-menu > div", 
         {
@@ -78,9 +70,7 @@ export default function Home() {
           y: -100,
           ease: Expo.easeInOut,
           delay: 2.5,
-        },
-      );
-
+        });
       gsap.from(
         ".info", 
         {
@@ -89,8 +79,7 @@ export default function Home() {
           y: 100,
           ease: Power2.easeInOut,
           delay: 3,
-        },
-      );
+        });
     }, app.current);
     return () => ctx.revert();
   }, []);
@@ -100,7 +89,7 @@ export default function Home() {
       <p className="title">The most reliable way to predict the future is to create it</p>
       <div className="floating-image-container">
         <div className="cat-img">
-            <Image src={mainImage} alt="cat" width={2400} height={2400} priority />
+            <Image src={mainImage} alt="cat" width={1800} height={1800} priority />
         </div>
       </div>
       <div className="info">

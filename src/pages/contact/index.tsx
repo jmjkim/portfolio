@@ -81,7 +81,7 @@ const ContactLandingPage = () => {
 				<div className="contact-page-subwrapper">
 					<div className='self-introduction-wrapper'>
 						<p>
-							hi, my name is jack. i&apos;m looking for a junior frontend developer
+							hi, my name is jack kim. i&apos;m looking for a junior frontend developer
 							position in bay area, CA.
 						</p>
 						<br />
@@ -94,6 +94,7 @@ const ContactLandingPage = () => {
 								alt='linkedin'
 								width={200}
 								height={200}
+								priority
 							/>
 						</a>
 					</div>

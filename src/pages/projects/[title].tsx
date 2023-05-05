@@ -8,7 +8,6 @@ import github from "../../../public/github.svg";
 import { useRouter } from "next/router";
 import demonstration from "../../../public/demonstration.png";
 
-
 const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     const router = useRouter()
 
@@ -29,7 +28,7 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                     duration: 2,
                     backgroundColor: "#000",
                     delay: 2,
-                    left: "100%",
+                    width: 0,
                     display: "none",
                 });
 
@@ -47,7 +46,7 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                 {
                     ease: "power3.inOut",
                     duration: 3,
-                })
+                });
 
             gsap.from(
                 ".container",
@@ -59,7 +58,8 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                 });
 
             gsap.from(
-                ".img-wrapper", {
+                ".img-wrapper", 
+                {
                     y: 50,
                     opacity: 0,
                     delay: 3,
@@ -82,12 +82,11 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                 <div className="cols">
                   <div className="col-left">
                       {project.detailImages.map((img, idx) => {
-                          return (
+                        return (
                             <div key={idx} className="img-wrapper">
                                 <Image src={img.replace("/public", "")} alt="project" width={400} height={400} priority />
                             </div>
-                        )
-                      })}
+                        )})}
                   </div>
                   <div className="col-right">
                     <h1>{project.title}</h1>
@@ -105,8 +104,7 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                             {project.demonstration !== "" ?
                                 <a href={project.demonstration} target="_blank">
                                     <Image src={demonstration} alt="demonstration" width={100} height={100} priority />
-                                </a> : null
-                            }
+                                </a> : null}
                         </div>
                     </div>
                     <br />

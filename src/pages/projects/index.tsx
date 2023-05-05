@@ -40,14 +40,13 @@ const ProjectsLandingPage = ({
 			<div className='project-list-wrapper'>
 				{projects.map((project) => {
 					const projectMainImg = project.mainImage.replace("/public", "");
-
 					return (
-						<>
+						<div key={project.title}>
 							<div
 								className='project-container'
 								onClick={() => handleLinkClick(project.title)}
 							>
-								<a key={project.title}>
+								<a>
 									<p>{project.title}</p>
 									<Image
 										src={projectMainImg}
@@ -58,7 +57,7 @@ const ProjectsLandingPage = ({
 									/>
 								</a>
 							</div>
-						</>
+						</div>
 					);
 				})}
 			</div>
