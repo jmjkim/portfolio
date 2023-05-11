@@ -67,6 +67,19 @@ const ProjectDisplayer = ({ project }: InferGetServerSidePropsType<typeof getSer
                     duration: 2,
                     ease: "power3.inOut",
                 });
+
+            gsap.fromTo(
+                ".link-wrapper img",
+                {
+                    border: "2px dashed #FFF",
+                    duration: 2,
+                },
+                {
+                    border: "2px dashed #000",
+                    ease: "power3.out",
+                    duration: 2,
+                    repeat: -1,
+                });
         })
         return () => ctx.revert();
     }, [])
